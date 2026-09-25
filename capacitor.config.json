@@ -1,0 +1,6 @@
+{
+  "appId": "com.sciencestudy.gcse",
+  "appName": "Science Study",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}

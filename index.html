@@ -1,0 +1,51 @@
+<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Science Study</title><link rel="stylesheet" href="style.css"></head><body><div id="app"><header><div class="logo">Science<span>Study</span></div><span class="badge">GCSE</span></header><header>GCSE SCIENCE — Science Study</header><main><section id="home"><h1>Revise smarter.</h1><p>1,200 questions across 24 GCSE Biology, Chemistry and Physics topics.</p><button onclick="show('quiz');newQuiz()">Start a quiz</button></section><section id="quiz" hidden><h1>Quiz</h1><select id="subject" onchange="setup()"><option>Mixed Science</option><option>Biology</option><option>Chemistry</option><option>Physics</option><option>Topic</option></select><select id="topic"></select><select id="count"><option>10</option><option>20</option><option>30</option><option>40</option><option selected>50</option></select><div id="box"></div></section><section id="ai" hidden>
+<div class="card hero">
+  <div class="ai-head"><div class="ai-icon">🤖</div><div><h2>AI Science Tutor</h2><p>Ask anything. Get it explained clearly.</p></div></div>
+</div>
+<div class="card">
+  <label><b>Subject</b></label>
+  <select id="aiSubject" onchange="populateAITopics()"><option>Biology</option><option>Chemistry</option><option>Physics</option></select>
+  <label><b>Topic</b></label><select id="aiTopic"></select>
+  <label><b>Explanation style</b></label>
+  <select id="aiLevel"><option>Simple</option><option>Detailed GCSE</option><option>Exam-focused</option></select>
+  <label><b>Your question</b></label>
+  <textarea id="aiQuestion" placeholder="e.g. Why does osmosis happen? Explain it step by step."></textarea>
+  <button class="primary" onclick="askAI()">✨ Explain my question</button>
+  <div id="aiStatus"></div>
+  <div id="aiAnswer"></div>
+</div>
+</section>
+
+<section id="marks" hidden>
+  <div class="card hero">
+    <span class="badge">OFFICIAL</span>
+    <h2>Mark Schemes & Answers</h2>
+    <p>Access official GCSE Science past papers and mark schemes from the exam boards.</p>
+  </div>
+
+  <div class="card">
+    <h3>🔬 AQA</h3>
+    <p>Official past papers, mark schemes and examiner reports.</p>
+    <a class="primary linkbtn" href="https://www.aqa.org.uk/past-papers-and-mark-schemes-finder" target="_blank" rel="noopener noreferrer">Open AQA Past Papers</a>
+  </div>
+
+  <div class="card">
+    <h3>🧪 Pearson Edexcel</h3>
+    <p>Official Pearson assessment materials, including question papers and mark schemes when publicly available.</p>
+    <a class="primary linkbtn" href="https://qualifications.pearson.com/en/support/support-topics/exams/past-papers.html" target="_blank" rel="noopener noreferrer">Open Edexcel Past Papers</a>
+  </div>
+
+  <div class="card">
+    <h3>⚡ OCR</h3>
+    <p>Official OCR past-paper finder with question papers, mark schemes and examiner reports as released.</p>
+    <a class="primary linkbtn" href="https://www.ocr.org.uk/qualifications/past-paper-finder/" target="_blank" rel="noopener noreferrer">Open OCR Past Papers</a>
+  </div>
+
+  <div class="card">
+    <span class="badge">How it works</span>
+    <p>Choose your exam board, find your GCSE Biology, Chemistry, Physics or Combined Science paper, then open its official mark scheme to check your answers.</p>
+    <p class="muted">The app links to official sources rather than republishing copyrighted exam papers or mark schemes.</p>
+  </div>
+</section>
+
+<section id="topics" hidden><h1>Topics</h1><div id="list"></div></section></main><nav><button onclick="show('marks')">📄 Papers</button><button onclick="show('ai')">🤖 AI</button><button onclick="show('home')">Home</button><button onclick="show('quiz');newQuiz()">Quiz</button><button onclick="show('topics')">Topics</button></nav><script src="questions.js"></script><script src="ai-config.js"></script><script src="app.js"></script></div></body></html>
